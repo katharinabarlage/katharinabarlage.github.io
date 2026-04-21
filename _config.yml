@@ -2,5 +2,6 @@ title: My Website
 description: My GitHub Pages site
 
 remote_theme: mmistakes/minimal-mistakes
+
 plugins:
   - jekyll-remote-theme
