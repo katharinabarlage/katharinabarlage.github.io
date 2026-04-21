@@ -5,3 +5,7 @@ remote_theme: mmistakes/minimal-mistakes@4.24.0
 
 plugins:
   - jekyll-remote-theme
+
+minimal_mistakes_skin: "default"
+
+markdown: kramdown
