@@ -1,7 +1,7 @@
 title: My Website
 description: My GitHub Pages site
 
-remote_theme: mmistakes/minimal-mistakes
+remote_theme: mmistakes/minimal-mistakes@4.24.0
 
 plugins:
   - jekyll-remote-theme
