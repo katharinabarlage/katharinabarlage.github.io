@@ -1,9 +1,9 @@
 :root {
-    --coffee-bean: #1c0f13;
-    --slate-grey: #6e7e85;
-    --ash-grey: #b7cece;
-    --pale-slate: #f3f4f6;
-    --alabaster: #fafafa;
+    --bubblegum-pink: #f45b69;
+    --lavender-blush: #f6e8ea;
+    --coffee-bean: #22181c;
+    --black-cherry: #5a0001;
+    --cinnabar: #f13030;
 }
 
 /* Base */
@@ -14,7 +14,14 @@ html {
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: var(--alabaster);
+
+    /* 🎨 FUN subtle gradient */
+    background: linear-gradient(
+        180deg,
+        var(--lavender-blush),
+        #ffffff
+    );
+
     color: var(--coffee-bean);
     line-height: 1.65;
 }
@@ -26,17 +33,14 @@ body {
     margin: 0 auto;
 }
 
-/* ================= NAVBAR FIX ================= */
+/* ================= NAVBAR ================= */
 .top-menu {
     position: sticky;
     top: 0;
     z-index: 1000;
 
-    /* 👉 choose ONE of these */
-    background: var(--pale-slate); 
-    /* background: var(--slate-grey); */
-
-    border-bottom: 1px solid var(--ash-grey);
+    background: var(--lavender-blush);
+    border-bottom: 1px solid rgba(34, 24, 28, 0.08);
 }
 
 /* Prevent content being hidden behind navbar */
@@ -47,8 +51,6 @@ section {
 header {
     scroll-margin-top: 80px;
 }
-
-/* ============================================= */
 
 .top-menu ul {
     display: flex;
@@ -61,16 +63,12 @@ header {
 
 .top-menu a {
     text-decoration: none;
-    color: var(--slate-grey);
+    color: var(--coffee-bean);
     font-weight: 500;
     position: relative;
 }
 
-/* If using dark navbar, switch text color */
-.top-menu {
-    color: var(--coffee-bean);
-}
-
+/* underline animation */
 .top-menu a::after {
     content: "";
     position: absolute;
@@ -78,7 +76,7 @@ header {
     height: 2px;
     left: 0;
     bottom: -4px;
-    background: var(--slate-grey);
+    background: var(--cinnabar);
     transition: width 0.25s ease;
 }
 
@@ -88,7 +86,7 @@ header {
 }
 
 .top-menu a.active {
-    color: var(--coffee-bean);
+    color: var(--black-cherry);
 }
 
 /* Header */
@@ -110,7 +108,7 @@ h1 {
 }
 
 .subtitle {
-    color: var(--slate-grey);
+    color: rgba(34, 24, 28, 0.65);
 }
 
 /* Sections */
@@ -127,7 +125,7 @@ section.visible {
 }
 
 section + section {
-    border-top: 1px solid var(--ash-grey);
+    border-top: 1px solid rgba(34, 24, 28, 0.08);
     padding-top: 2.5rem;
 }
 
@@ -143,7 +141,7 @@ h2::before {
     display: block;
     width: 28px;
     height: 2px;
-    background: var(--slate-grey);
+    background: var(--cinnabar);
     margin-bottom: 0.6rem;
 }
 
@@ -151,7 +149,7 @@ h2::before {
 .publications li {
     margin-bottom: 1.2rem;
     padding-left: 1rem;
-    border-left: 2px solid var(--ash-grey);
+    border-left: 2px solid rgba(34, 24, 28, 0.15);
 }
 
 .publications a {
@@ -161,13 +159,14 @@ h2::before {
 }
 
 .publications a:hover {
-    color: var(--slate-grey);
+    color: var(--cinnabar);
 }
 
 .meta {
     display: block;
-    color: var(--slate-grey);
+    color: rgba(34, 24, 28, 0.65);
     font-size: 0.9rem;
+    margin-top: 0.2rem;
 }
 
 /* Subsections */
@@ -177,7 +176,7 @@ h2::before {
 
 h3 {
     font-size: 1rem;
-    color: var(--slate-grey);
+    color: rgba(34, 24, 28, 0.7);
     margin-bottom: 0.3rem;
 }
 
@@ -186,10 +185,14 @@ a {
     transition: color 0.2s ease;
 }
 
+a:hover {
+    color: var(--cinnabar);
+}
+
 /* Footer */
 .footer {
-    background: var(--slate-grey);
-    color: var(--pale-slate);
+    background: var(--black-cherry);
+    color: var(--lavender-blush);
     margin-top: 4rem;
     padding: 1.5rem 0;
 }
@@ -214,7 +217,7 @@ a {
     align-items: center;
     gap: 0.4rem;
     text-decoration: none;
-    color: var(--slate-grey);
+    color: rgba(34, 24, 28, 0.7);
     font-size: 0.95rem;
 }
 
@@ -224,7 +227,7 @@ a {
 }
 
 .socials a:hover {
-    color: var(--coffee-bean);
+    color: var(--cinnabar);
 }
 
 /* ================= MOBILE NAV FIX ================= */
@@ -232,7 +235,7 @@ a {
 
     .top-menu ul {
         flex-wrap: wrap;
-        gap: 0.6rem 1.2rem; /* row gap / column gap */
+        gap: 0.6rem 1.2rem;
         padding: 0.6rem 0.5rem;
     }
 
@@ -245,5 +248,4 @@ a {
         font-size: 0.9rem;
         padding: 0.2rem 0;
     }
-
 }
