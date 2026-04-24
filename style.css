@@ -1,122 +1,157 @@
-/* Updated Color Theme Variables */
 :root {
-    --coffee-bean: #1c0f13;
-    --slate-grey: #6e7e85;
-    --ash-grey: #b7cece;
-    --pale-slate: #bbbac6;
-    --alabaster-grey: #e2e2e2;
+    --bg: #fafafa;
+    --text: #1a1a1a;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --accent: #4f6d7a;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background: var(--alabaster-grey);
-    color: var(--coffee-bean);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
 }
 
-
-header {
-    background: var(--ash-grey);
-    color: var(--coffee-bean);
-    padding: 2rem 0 1rem 0;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(110, 126, 133, 0.10);
-}
-
-
-header .subtitle {
-    font-size: 1.2rem;
-    color: var(--slate-grey);
-}
-.top-menu {
-    background: var(--pale-slate);
-    box-shadow: 0 2px 8px rgba(110, 126, 133, 0.10);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 2px solid var(--ash-grey);
-}
-.top-menu ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 2.5rem;
-    margin: 0;
-    padding: 0.5rem 0;
-    align-items: center;
-}
-.top-menu li {
-    margin: 0;
-    padding: 0;
-}
-.top-menu a {
-    color: var(--coffee-bean);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    letter-spacing: 0.5px;
-    padding: 0.5rem 1.2rem;
-    border-radius: 24px;
-    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-    display: inline-block;
-}
-.top-menu a:hover, .top-menu a:focus {
-    background: var(--slate-grey);
-    color: var(--alabaster-grey);
-    box-shadow: 0 2px 8px rgba(28, 15, 19, 0.10);
-    outline: none;
-}
-
+/* Layout */
 .container {
     width: 90%;
-    max-width: 800px;
+    max-width: 720px;
     margin: 0 auto;
 }
 
-
-main {
-    padding: 2rem 0;
+/* Navigation */
+.top-menu {
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
 }
 
+.top-menu ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0.8rem 0;
+}
 
+.top-menu a {
+    text-decoration: none;
+    color: var(--muted);
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.top-menu a:hover,
+.top-menu a.active {
+    color: var(--text);
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+}
+
+header img {
+    width: 110px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    color: var(--muted);
+    margin-top: 0.5rem;
+}
+
+/* Sections */
 section {
-    margin-bottom: 2rem;
-    background: var(--alabaster-grey);
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(110, 126, 133, 0.08);
-    padding: 1.5rem;
+    margin-bottom: 3.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
 }
 
-
-h1, h2 {
-    margin-top: 0;
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
+section + section {
+    border-top: 1px solid var(--line);
+    padding-top: 2.5rem;
+}
 
+/* Headings */
+h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+/* Lists */
 ul {
     padding-left: 1.2rem;
 }
 
-
-footer {
-    background: var(--coffee-bean);
-    color: var(--alabaster-grey);
-    text-align: center;
-    padding: 1rem 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    box-shadow: 0 -2px 8px rgba(28, 15, 19, 0.15);
+/* Publications */
+.publications li {
+    margin-bottom: 1.2rem;
+    border-left: 2px solid var(--line);
+    padding-left: 1rem;
 }
 
-@media (max-width: 600px) {
-    .container {
-        width: 98%;
-    }
-    section {
-        padding: 1rem;
+.publications a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+}
+
+.publications a:hover {
+    color: var(--accent);
+}
+
+.meta {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+/* Subsections */
+.subsection {
+    margin-bottom: 1.5rem;
+}
+
+/* Links */
+a {
+    transition: color 0.2s ease;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #121212;
+        --text: #e5e5e5;
+        --muted: #9ca3af;
+        --line: #2a2a2a;
+        --accent: #7aa2b8;
     }
 }
