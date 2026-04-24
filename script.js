@@ -8,35 +8,20 @@ const observer = new IntersectionObserver(entries => {
       entry.target.classList.add("visible");
     }
   });
-}, { threshold: 0.15 });
+}, { threshold: 0.2 });
 
 sections.forEach(section => observer.observe(section));
 
-/* FIXED NAV BEHAVIOR */
-let isClickScrolling = false;
-
-navLinks.forEach(link => {
-  link.addEventListener("click", () => {
-    isClickScrolling = true;
-
-    navLinks.forEach(l => l.classList.remove("active"));
-    link.classList.add("active");
-
-    setTimeout(() => {
-      isClickScrolling = false;
-    }, 700); // matches scroll duration
-  });
-});
-
+/* Active nav (robust version) */
 window.addEventListener("scroll", () => {
-  if (isClickScrolling) return;
-
   let current = "";
 
   sections.forEach(section => {
-    const sectionTop = section.offsetTop - 120;
-    if (scrollY >= sectionTop) {
-      current = section.getAttribute("id");
+    const top = section.offsetTop - 120;
+    const bottom = top + section.offsetHeight;
+
+    if (scrollY >= top && scrollY < bottom) {
+      current = section.id;
     }
   });
 
