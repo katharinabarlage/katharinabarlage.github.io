@@ -1,11 +1,12 @@
 :root {
-    --bg: #fafafa;
-    --text: #1a1a1a;
-    --muted: #6b7280;
-    --line: #e5e7eb;
-    --accent: #4f6d7a;
+    --coffee-bean: #1c0f13;
+    --slate-grey: #6e7e85;
+    --ash-grey: #b7cece;
+    --pale-slate: #f3f4f6;
+    --alabaster: #fafafa;
 }
 
+/* Base */
 html {
     scroll-behavior: smooth;
 }
@@ -13,8 +14,8 @@ html {
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: var(--bg);
-    color: var(--text);
+    background: var(--alabaster);
+    color: var(--coffee-bean);
     line-height: 1.65;
 }
 
@@ -29,8 +30,9 @@ body {
 .top-menu {
     position: sticky;
     top: 0;
-    background: var(--bg);
-    border-bottom: 1px solid var(--line);
+    background: rgba(250,250,250,0.85);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--ash-grey);
 }
 
 .top-menu ul {
@@ -44,14 +46,29 @@ body {
 
 .top-menu a {
     text-decoration: none;
-    color: var(--muted);
+    color: var(--slate-grey);
     font-weight: 500;
-    transition: color 0.2s ease;
+    position: relative;
 }
 
-.top-menu a:hover,
+.top-menu a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -4px;
+    background: var(--slate-grey);
+    transition: width 0.25s ease;
+}
+
+.top-menu a:hover::after,
+.top-menu a.active::after {
+    width: 100%;
+}
+
 .top-menu a.active {
-    color: var(--text);
+    color: var(--coffee-bean);
 }
 
 /* Header */
@@ -70,12 +87,10 @@ h1 {
     font-size: 2.4rem;
     font-weight: 600;
     margin: 0;
-    letter-spacing: -0.02em;
 }
 
 .subtitle {
-    color: var(--muted);
-    margin-top: 0.5rem;
+    color: var(--slate-grey);
 }
 
 /* Sections */
@@ -92,7 +107,7 @@ section.visible {
 }
 
 section + section {
-    border-top: 1px solid var(--line);
+    border-top: 1px solid var(--ash-grey);
     padding-top: 2.5rem;
 }
 
@@ -103,35 +118,35 @@ h2 {
     margin-bottom: 1rem;
 }
 
-h3 {
-    font-size: 1rem;
-    margin-bottom: 0.3rem;
-}
-
-/* Lists */
-ul {
-    padding-left: 1.2rem;
+h2::before {
+    content: "";
+    display: block;
+    width: 28px;
+    height: 2px;
+    background: var(--slate-grey);
+    margin-bottom: 0.6rem;
 }
 
 /* Publications */
 .publications li {
     margin-bottom: 1.2rem;
-    border-left: 2px solid var(--line);
     padding-left: 1rem;
+    border-left: 2px solid var(--ash-grey);
 }
 
 .publications a {
     text-decoration: none;
-    color: var(--text);
+    color: var(--coffee-bean);
     font-weight: 500;
 }
 
 .publications a:hover {
-    color: var(--accent);
+    color: var(--slate-grey);
 }
 
 .meta {
-    color: var(--muted);
+    display: block;
+    color: var(--slate-grey);
     font-size: 0.9rem;
 }
 
@@ -140,18 +155,13 @@ ul {
     margin-bottom: 1.5rem;
 }
 
+h3 {
+    font-size: 1rem;
+    color: var(--slate-grey);
+    margin-bottom: 0.3rem;
+}
+
 /* Links */
 a {
     transition: color 0.2s ease;
-}
-
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg: #121212;
-        --text: #e5e5e5;
-        --muted: #9ca3af;
-        --line: #2a2a2a;
-        --accent: #7aa2b8;
-    }
 }
