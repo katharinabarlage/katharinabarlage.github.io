@@ -200,3 +200,29 @@ a {
     font-size: 0.9rem;
     letter-spacing: 0.02em;
 }
+
+/* Social links */
+.socials {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.socials a {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-decoration: none;
+    color: var(--slate-grey);
+    font-size: 0.95rem;
+}
+
+.socials svg {
+    width: 16px;
+    height: 16px;
+}
+
+.socials a:hover {
+    color: var(--coffee-bean);
+}
