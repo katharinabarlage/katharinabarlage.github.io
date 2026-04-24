@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +9,15 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
+	<nav class="top-menu">
+		<ul>
+			<li><a href="#about">About</a></li>
+			<li><a href="#publications">Publications</a></li>
+			<li><a href="#community">Community Service</a></li>
+			<li><a href="#teaching">Teaching</a></li>
+			<li><a href="#contact">Contact</a></li>
+		</ul>
+	</nav>
 	<header>
 		<div class="container">
 			<img src="https://www.mmi.ifi.lmu.de/team/katharina.barlage/katharina_barlage.jpg" alt="Katharina Barlage" style="width:120px;border-radius:50%;margin-bottom:1rem;box-shadow:0 2px 8px rgba(24,51,47,0.15);">
@@ -16,45 +26,53 @@
 		</div>
 	</header>
 	<main>
-		<section class="about">
+
+		<section id="about" class="about">
 			<h2>About Me</h2>
 			<p>I am a PhD student at LMU Munich in the Media Informatics Group. My research focuses on the personalization of privacy and security measures using Large Language Models (LLMs) and the application of privacy-preserving technologies in usable systems.</p>
 		</section>
-		<section class="research">
-			<h2>Research Interests</h2>
-			<ul>
-				<li>Personalization of Privacy and Security Measures Using Large Language Models (LLMs)</li>
-				<li>Application of Privacy-Preserving Technologies in Usable Systems</li>
-			</ul>
-		</section>
-		<section class="background">
-			<h2>Academic Background</h2>
-			<ul>
-				<li>B.Sc. International Media and Computing, HTW Berlin</li>
-				<li>Erasmus, University of Oslo (UiO)</li>
-				<li>M.Sc. Computer Science, HU Berlin</li>
-				<li>Since September 2025: PhD Student, LMU Munich</li>
-			</ul>
-		</section>
-		<section class="publications">
+		<section id="publications" class="publications">
 			<h2>Selected Publications</h2>
 			<ul>
 				<li><a href="https://www.mmi.ifi.lmu.de/forschung/publikationen/detail?pub=barlage2025isc2" target="_blank">Privacy-Preserving Parking Lot Surveillance Utilizing Homomorphic Encryption</a> <br>
 				<em>Katharina Barlage, Andrei Aleksandrov, Philipp Lämmel</em>, IEEE International Smart Cities Conference (ISC2), Dec 2025, Patras, Greece.</li>
 			</ul>
 		</section>
-		<section class="contact">
-			<h2>Contact</h2>
-			<p>Email: <a href="mailto:katharina.barlage@ifi.lmu.de">katharina.barlage@ifi.lmu.de</a></p>
-			<p>Phone: +49-89 / 2180-75137</p>
-			<p>Address: <br>Katharina Barlage<br>LMU Munich, Media Informatics Group<br>Frauenlobstr. 7a<br>80337 Munich, Germany<br>Room 435 (4th floor)</p>
+		<section id="community" class="community">
+			<h2>Community Service</h2>
+			<div class="community-subsection">
+				<h3>Student Volunteering</h3>
+				<ul>
+					<li>CHI'26</li>
+					<li>PerDis'26</li>
+					<li>IS-EUD'25</li>
+				</ul>
+			</div>
+			<div class="community-subsection">
+				<h3>Organizing Committees</h3>
+				<ul>
+					<li>Poster Chair, German Pre-CHI'26</li>
+				</ul>
+			</div>
+			<div class="community-subsection">
+				<h3>Reviewing</h3>
+				<ul>
+					<li>CHI'26</li>
+				</ul>
+			</div>
+		</section>
+		<section id="teaching" class="teaching">
+			<h2>Teaching</h2>
+			<ul>
+				<li>Advanced Web Technologies WiSe25/26</li>
+				<li>Practical Usable Privacy and Security WiSe25/26</li>
+			</ul>
 		</section>
 	</main>
-	<footer>
-		<div class="container">
-			<p>&copy; 2026 Katharina Barlage</p>
-		</div>
-	</footer>
-	<script src="script.js"></script>
-</body>
-</html>
+
+	<section id="contact" class="contact">
+		<h2>Contact</h2>
+		<p>Email: <a href="mailto:katharina.barlage@ifi.lmu.de">katharina.barlage@ifi.lmu.de</a></p>
+		<p>Phone: +49-89 / 2180-75137</p>
+		<p>Address: <br>Katharina Barlage<br>LMU Munich, Media Informatics Group<br>Frauenlobstr. 7a<br>80337 Munich, Germany<br>Room 435 (4th floor)</p>
+	</section>
