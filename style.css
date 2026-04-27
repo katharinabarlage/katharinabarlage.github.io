@@ -19,6 +19,18 @@ body {
     line-height: 1.65;
 }
 
+ul li {
+    position: relative;
+    padding-left: 0.8rem;
+}
+
+ul li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--slate-grey);
+}
+
 /* Layout */
 .container {
     width: 90%;
