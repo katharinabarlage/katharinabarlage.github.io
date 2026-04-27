@@ -148,9 +148,16 @@ h2::before {
 }
 
 /* Publications */
+
+.publications {
+    list-style: none;   /* removes bullet points */
+    padding-left: 0;    /* removes default indentation */
+    margin: 0;
+}
+
 .publications li {
-    margin-bottom: 1.2rem;
-    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+    padding-left: 1.2rem;   /* slightly more breathing room */
     border-left: 2px solid var(--ash-grey);
 }
 
